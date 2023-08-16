@@ -1,0 +1,18 @@
+//checkpoint Programmation procédurale, tri et recherche
+//Exercice 2
+PROCEDURE try_insertion(tab : ARRAY_OF INTEGER)
+VAR
+    i, j, key : INTEGER;
+BEGIN
+    FOR i FROM 1 TO tab.length-1 DO
+        key := tab[i]; 
+        j := i - 1;
+
+        WHILE j >= 0 AND tab[j] > key DO
+            tab[j + 1] := tab[j];
+            j := j - 1;
+        END_WHILE
+
+        tab[j + 1] := key;
+    END_FOR
+END
